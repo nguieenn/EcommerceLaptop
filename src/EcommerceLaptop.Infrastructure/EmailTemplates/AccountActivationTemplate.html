@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kích hoạt tài khoản - E-Commerce Laptop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            background-color: #6f42c1;
+            color: white;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .activation-section {
+            background-color: #e7e3ff;
+            border: 1px solid #6f42c1;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #6f42c1;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 15px 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .security-info {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .benefits {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .footer {
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .code-section {
+            background-color: #f8f9fa;
+            border: 2px dashed #6f42c1;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .verification-code {
+            font-size: 24px;
+            font-weight: bold;
+            color: #6f42c1;
+            letter-spacing: 3px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1> Chào mừng đến với E-Commerce Laptop!</h1>
+        </div>
+        <div class="content">
+            <h2>Xin chào {{CustomerName}},</h2>
+            <p>Cảm ơn bạn đã đăng ký tài khoản tại E-Commerce Laptop! Để hoàn tất quá trình đăng ký và bắt đầu trải
+                nghiệm mua sắm, vui lòng kích hoạt tài khoản của bạn.</p>
+
+            <div class="activation-section">
+                <h3> Kích hoạt tài khoản</h3>
+                <p>Nhấp vào nút bên dưới để kích hoạt tài khoản của bạn:</p>
+                <a href="{{ActivationUrl}}" class="button">Kích hoạt tài khoản</a>
+                <p><small>Hoặc copy và paste link sau vào trình duyệt:</small></p>
+                <p style="word-break: break-all; font-size: 12px; color: #666;">{{ActivationUrl}}</p>
+            </div>
+
+            <div class="code-section">
+                <h3> Mã xác thực</h3>
+                <p>Nếu link không hoạt động, bạn có thể sử dụng mã xác thực bên dưới:</p>
+                <div class="verification-code">{{VerificationCode}}</div>
+                <p><small>Nhập mã này vào trang kích hoạt tài khoản</small></p>
+            </div>
+
+            <div class="security-info">
+                <h3> Lưu ý bảo mật</h3>
+                <ul>
+                    <li><strong>Thời hạn:</strong> Link kích hoạt có hiệu lực trong {{ExpirationHours}} giờ</li>
+                    <li><strong>Một lần sử dụng:</strong> Link chỉ có thể sử dụng một lần duy nhất</li>
+                    <li><strong>Bảo mật:</strong> Không chia sẻ link này với bất kỳ ai</li>
+                    <li><strong>Ht hn:</strong> {{ExpirationTime}}</li>
+                </ul>
+            </div>
+
+            <div class="benefits">
+                <h3> Lợi ích thành viên</h3>
+                <p>Sau khi kích hoạt tài khoản, bạn sẽ được:</p>
+                <ul>
+                    <li> Theo dõi đơn hàng và lịch sử mua sắm</li>
+                    <li> Nhận thông báo ưu đãi và khuyến mãi độc quyền</li>
+                    <li> Tích điểm thành viên và đổi quà</li>
+                    <li> Hỗ trợ khách hàng ưu tiên</li>
+                    <li> Bảo hành mở rộng cho sản phẩm</li>
+                    <li> Miễn phí vận chuyển cho đơn hàng trên 500,000 VNĐ</li>
+                </ul>
+            </div>
+
+            <h3> Thông tin tài khoản:</h3>
+            <div class="benefits">
+                <p><strong>Email:</strong> {{Email}}</p>
+                <p><strong>Ngày đăng ký:</strong> {{RegistrationDate}}</p>
+                <p><strong>Loại tài khoản:</strong> {{AccountType}}</p>
+            </div>
+
+            <h3> Cần hỗ trợ?</h3>
+            <p>Nếu bạn gặp khó khăn trong việc kích hoạt tài khoản hoặc có bất kỳ câu hỏi nào, đừng ngần ngại liên hệ
+                với chúng tôi:</p>
+            <ul>
+                <li><strong>Hotline:</strong> 1900-1234 (8:00 - 22:00 hàng ngày)</li>
+                <li><strong>Email:</strong> support@ecommercelaptop.com</li>
+                <li><strong>Live Chat:</strong> Có sẵn trên website 24/7</li>
+            </ul>
+
+            <p>Chúng tôi rất vui mừng được đồng hành cùng bạn trong hành trình công nghệ!</p>
+
+            <p><strong>Trân trọng,</strong><br>
+                Đội ngũ E-Commerce Laptop</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 E-Commerce Laptop. Tất cả các quyền được bảo lưu.</p>
+            <p>Hotline: 1900-1234 | Email: support@ecommercelaptop.com</p>
+            <p>Địa chỉ: 123 đường ABC, Quận XYZ, TP. Hồ Chí Minh</p>
+            <p>Website: www.ecommercelaptop.com</p>
+        </div>
+    </div>
+</body>
+
+</html>

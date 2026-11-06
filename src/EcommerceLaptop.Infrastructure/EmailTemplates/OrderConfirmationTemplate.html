@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xác nhận đơn hàng - E-Commerce Laptop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            background-color: #28a745;
+            color: white;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .order-summary {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .product-item {
+            border-bottom: 1px solid #dee2e6;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .product-item:last-child {
+            border-bottom: none;
+        }
+
+        .total-section {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .footer {
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Đơn hàng đã được xác nhận!</h1>
+        </div>
+        <div class="content">
+            <h2>Xin chào {{CustomerName}},</h2>
+            <p>Cảm ơn bạn đã mua sắm tại E-Commerce Laptop! Chúng tôi đã nhận được đơn hàng của bạn và đang xử lý.</p>
+
+            <div class="order-summary">
+                <h3>Thông tin đơn hàng</h3>
+                <p><strong>Mã đơn hàng:</strong> {{OrderId}}</p>
+                <p><strong>Ngày đặt hàng:</strong> {{OrderDate}}</p>
+                <p><strong>Trạng thái:</strong> {{OrderStatus}}</p>
+                <p><strong>Phương thức thanh toán:</strong> {{PaymentMethod}}</p>
+            </div>
+
+            <h3>Chi tiết sản phẩm:</h3>
+            <div class="order-summary">
+                {{#each OrderItems}}
+                <div class="product-item">
+                    <div>
+                        <strong>{{ProductName}}</strong><br>
+                        <small>SKU: {{SKU}}</small><br>
+                        <small>Số lượng: {{Quantity}}</small>
+                    </div>
+                    <div style="text-align: right;">
+                        <strong>{{UnitPrice}} VN</strong><br>
+                        <small>Tổng: {{TotalPrice}} VN</small>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+
+            <div class="total-section">
+                <h3>Tổng cộng đơn hàng:</h3>
+                <p>Tạm tính: <strong>{{SubTotal}} VN</strong></p>
+                <p>Phí vận chuyển: <strong>{{ShippingFee}} VN</strong></p>
+                <p>Giảm giá: <strong>-{{Discount}} VN</strong></p>
+                <hr>
+                <p style="font-size: 18px;"><strong>Tổng cộng: {{TotalAmount}} VN</strong></p>
+            </div>
+
+            <h3>Địa chỉ giao hàng:</h3>
+            <div class="order-summary">
+                <p><strong>{{ShippingName}}</strong></p>
+                <p>{{ShippingPhone}}</p>
+                <p>{{ShippingAddress}}</p>
+                <p>{{ShippingCity}}, {{ShippingProvince}}</p>
+            </div>
+
+            <h3>Thông tin vận chuyển:</h3>
+            <ul>
+                <li><strong>Phương thức vận chuyển:</strong> {{ShippingMethod}}</li>
+                <li><strong>Thời gian giao hàng dự kiến:</strong> {{EstimatedDelivery}}</li>
+                <li><strong>Ghi chú:</strong> {{OrderNotes}}</li>
+            </ul>
+
+            <div style="text-align: center;">
+                <a href="{{OrderTrackingUrl}}" class="button">Theo dõi đơn hàng</a>
+            </div>
+
+            <h3>Bc tip theo:</h3>
+            <ol>
+                <li>Chúng tôi sẽ xử lý và chuẩn bị đơn hàng của bạn</li>
+                <li>Bạn sẽ nhận được email thông báo khi đơn hàng được giao cho đơn vị vận chuyển</li>
+                <li>Theo dõi đơn hàng qua link ở trên hoặc tài khoản của bạn</li>
+                <li>Nhận hàng và kiểm tra sản phẩm</li>
+            </ol>
+
+            <p>Nếu bạn có bất kỳ câu hỏi nào về đơn hàng, vui lòng liên hệ với chúng tôi qua hotline hoặc email hỗ trợ.
+            </p>
+
+            <p><strong>Trân trọng,</strong><br>
+                Đội ngũ E-Commerce Laptop</p>
+        </div>
+        <div class="footer">
+            <p>&copy; 2025 E-Commerce Laptop. Tất cả các quyền được bảo lưu.</p>
+            <p>Hotline: 1900-1234 | Email: support@ecommercelaptop.com</p>
+        </div>
+    </div>
+</body>
+
+</html>
