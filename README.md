@@ -51,6 +51,3 @@ Nền tảng thương mại điện tử chuyên bán laptop. Dự án tách fro
 
 5. Chạy kiểm thử backend bằng `dotnet test EcommerceLaptop.sln`. Frontend có các lệnh `npm run lint`, `npm test` và `npm run test:e2e`.
 
-## Lưu ý bảo mật
-
-Các file `appsettings.json`, `.env`, chứng chỉ và khóa bí mật bị bỏ qua bởi Git. Chỉ dùng file mẫu để chia sẻ cấu hình.
